@@ -359,23 +359,44 @@ footer {
 }
 
 /* --- Responsividade --- */
+
+/* Para tablets e celulares em geral */
 @media (max-width: 768px) {
     .main-headline { font-size: 2.5rem; }
     .subtitle { font-size: 1.1rem; }
     .benefits-grid { grid-template-columns: 1fr; }
     .testimonial-slider-wrapper { padding: 0 1rem; }
     .slider-nav button { display: none; }
+
+    /* Ajustes para o cabeçalho mobile */
+    .main-header {
+        padding: 0.8rem 0;
+    }
+    .logo img {
+        height: 45px;
+    }
+    .logo span {
+        display: none;
+    }
+
+    /* Adiciona espaçamento lateral no conteúdo da seção Hero no mobile */
+    .hero-content {
+        padding: 0 1.5rem;
+    }
+
+    /* Seção de Destaques (Stats) no mobile */
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
 }
 
+/* Para celulares com telas menores */
 @media (max-width: 480px) {
     .container { padding: 0 1rem; }
     .main-headline { font-size: 2rem; }
     .subtitle { font-size: 1rem; }
     .section-title { font-size: 2rem; }
-    .main-header .container {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
 }
 
 /* --- Botão Flutuante (Mobile-First) --- */
@@ -420,10 +441,19 @@ footer {
     text-align: center;
 }
 
+/* ESTA É A REGRA QUE RESOLVE O ALINHAMENTO */
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
 .stat-item h3 {
-    font-size: 3.5rem;
+    font-size: 2.8rem; 
     font-weight: 700;
     color: var(--gold);
+    margin-bottom: 0.5rem; /* Adiciona um espaço entre o número e o texto */
 }
 
 .stat-item p {
@@ -432,16 +462,6 @@ footer {
     font-weight: 300;
 }
 
-@media (max-width: 768px) {
-    .stats-grid {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-    }
-
-    .stat-item h3 {
-        font-size: 3rem;
-    }
-}
 
 /* --- Seção FAQ com Accordion --- */
 #faq {
@@ -615,5 +635,5 @@ footer {
 }
 
 .footer-logo img {
-    height: 70px;
+    height: 160px;
 }
